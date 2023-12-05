@@ -7,6 +7,7 @@ export function ModalPassword({pasworld, handleClose}) {
 
     async function handleCopyPassworl() {
         await Clipboard.setStringAsync(pasworld);
+        await saveItem("@pass", pasworld)
         alert("Senha salva com suceesso")
         
         handleClose();
