@@ -37,19 +37,22 @@ const useStorage = () =>{
                 return(pasword !== item)
             })
 
-            await AsyncStorage.setItem(key, JSON.stringify)
+            await AsyncStorage.setItem(key, JSON.stringify(mayPasswords))
             return mayPasswords;
 
-        }catch(error){
+        }
+        catch(error){
             console.log("ERRO AO DELETAR", error)
         }
 
     }
 
-    return(
+    return{
         getItem,
         saveItem,
-        removeItem
-    )
+        removeItem,
+    }
 
 }
+
+export default useStorage;
